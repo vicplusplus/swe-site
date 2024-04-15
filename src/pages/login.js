@@ -1,5 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 export default function Login() {
     const router = useRouter();
@@ -25,7 +26,7 @@ export default function Login() {
                     <input type="submit" value="Submit" />
                 </div>
             </form>
-            <a href="/forgot-password" className="text-blue-500">Forgot password?</a>
+            <Link href="/forgot-password" className="text-blue-500">Forgot password?</Link>
         </div>
     );
 }

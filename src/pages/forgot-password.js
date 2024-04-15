@@ -23,8 +23,17 @@ export default function ForgotPassword() {
                     <input type="submit" value="Submit" />
                 </div>
             </form>
-            <Link href="/login" className="text-blue-500">Back to Login</Link>
-            {submitted && <a href="#" onClick={() => router.push('/reset-password')} className="text-blue-500">Debug: Go to Reset Password</a>}
+            <div>
+                <Link href="/login" className="text-blue-500">Back to Login</Link>
+            </div>
+            {submitted &&
+                <div>
+                    <Link href="#" onClick={() => router.push('/reset-password')} className="text-blue-500">
+                        Debug: Go to Reset Password
+                    </Link>
+                </div>
+            }
+
         </div>
     );
 }

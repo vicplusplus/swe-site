@@ -7,10 +7,6 @@ export default function ResetPassword() {
             <h1 className="text-purple-500 leading-normal">Reset Password</h1>
             <form>
                 <div>
-                    <label htmlFor="username" className="text-gray-500">Username:</label>
-                    <input type="text" id="username" name="username" required />
-                </div>
-                <div>
                     <label htmlFor="password" className="text-gray-500">New Password:</label>
                     <input type="password" id="password" name="password" required />
                 </div>

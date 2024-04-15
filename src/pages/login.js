@@ -7,7 +7,22 @@ export default function Login() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        router.push('/dashboard');
+        const username = event.target.username.value;
+        const password = event.target.password.value;
+
+        const response = await fetch('/api/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ username, password }),
+        });
+
+        if (response.ok) {
+            router.push('/dashboard');
+        } else {
+            alert("Invalid username or password");
+        }
     };
 
     return (
@@ -26,7 +41,13 @@ export default function Login() {
                     <input type="submit" value="Submit" />
                 </div>
             </form>
-            <Link href="/forgot-password" className="text-blue-500">Forgot password?</Link>
+            <div>
+                <Link href="/forgot-password" className="text-blue-500">Forgot password?</Link>
+            </div>
+            <div>
+                <Link href="/create-account" className="text-blue-500">Create an account</Link>
+            </div>
+
         </div>
     );
 }
